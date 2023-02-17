@@ -1,5 +1,7 @@
 # Forkify
 
+![Forkify](./src/img/logo.png)
+
 This web application allows users to search for recipes, in addition to creating new recipes and bookmarking them for later.
 
 ## Features
