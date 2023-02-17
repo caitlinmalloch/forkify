@@ -23,8 +23,10 @@ Currently hosted by Netlify
 ## Tech Stack
 
 - HTML
-- CSS
+- SASS/CSS
 - JavaScript
+- Node.js
+- Parcel
 
 ## UI Preview
 
@@ -34,11 +36,11 @@ Currently hosted by Netlify
 
 ## Build Specs
 
-This is a final overview of the arhitecture of the Mapty application. The learning objective for this project is using OOP with JavaScript and becoming familiar with class polymorphism.
-![Architecture Flowchart](./images/Mapty-architecture-final.png)
+This is a final overview of the arhitecture of the Forkify application. The learning objective for this project is to consolidate learning of advanced JavaScript functions, classes and methods.
+![Architecture Flowchart](./dev/forkify-architecture-recipe-loading.png)
 
 This is the flowchart used in design to build features.
-![Feature Flowchart](./images/Mapty-flowchart.png)
+![Feature Flowchart](./dev/forkify-flowchart-part-3.png)
 
 ## Developer
 
