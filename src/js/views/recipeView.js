@@ -9,9 +9,7 @@ class RecipeView extends View {
   _message = '';
 
   addHandlerRender(handler) {
-    ['hashchange', 'load'].forEach(event =>
-      window.addEventListener(event, handler)
-    );
+    ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
   }
 
   _generateMarkup() {
@@ -63,8 +61,10 @@ class RecipeView extends View {
         </div>
 
         <div class="recipe__user-generated">
-        </div>
-        
+          <svg>
+            <use href="${icons}#icon-user"></use>
+          </svg>
+        </div>        
         <button class="btn--round">
           <svg class="">
             <use href="${icons}#icon-bookmark-fill"></use>
