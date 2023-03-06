@@ -2,7 +2,7 @@
 
 ![Forkify](./src/img/logo.png)
 
-This web application allows users to search for recipes, in addition to creating new recipes and bookmarking them for later.
+This web application allows users to search for recipes, in addition to creating new recipes and bookmarking them for later. The application is supported by the Forkify API that fetches recipes from numerous websites and publishers. A list of favourite recipes can be bookmarked and saved on local storage. Additionally, users can create a new recipe.
 
 ## Features
 
@@ -16,11 +16,13 @@ This web application allows users to search for recipes, in addition to creating
 
 ## Live Site
 
-[Link](https://)
+[Link](https://https://forkify-caitlinmalloch.netlify.app/)
+
+https://forkify-caitlinmalloch.netlify.app/
 
 Currently hosted by Netlify
 
-[![Netlify Status]
+[![Netlify Status](https://api.netlify.com/api/v1/badges/89efcabc-7292-431d-a4fc-97de897eadaa/deploy-status)](https://app.netlify.com/sites/forkify-caitlinmalloch/deploys)
 
 ## Tech Stack
 
@@ -32,9 +34,8 @@ Currently hosted by Netlify
 
 ## UI Preview
 
-![UI Preview 1]()
-
-![UI Preview 2]()
+The main UI is sleek and modern, and allows the user to search for recipes using the search bar. Results will be displayed on the bottom left in a list, and selected recipes will be expanded on the bottom right. To the top right, there is an option to add a recipe or bookmark a recipe.
+![UI Preview 1](./dev/forkify-ui-preview-1.png)
 
 ## Build Specs
 
@@ -64,3 +65,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 The Complete JavaScript Course 2023: From Zero to Expert!, Udemy
 Jonas Schmedtmann
+
+## Current Bugs
+
+- Bookmark function issues
