@@ -625,7 +625,7 @@ const controlServings = function(newServings) {
 const controlAddBookmark = function() {
     // 1) Add or remove bookmark
     if (!_modelJs.state.recipe.bookmarked) _modelJs.addBookmark(_modelJs.state.recipe);
-    else _modelJs.deleteBookmark(_modelJs.state.recipe.id);
+    if (_modelJs.state.recipe.bookmarked) _modelJs.deleteBookmark(_modelJs.state.recipe.id);
     // 2) Update recipe view
     (0, _recipeViewJsDefault.default).update(_modelJs.state.recipe);
     // 3) Render bookmarks
@@ -2083,18 +2083,18 @@ const state = {
     bookmarks: []
 };
 const createRecipeObject = function(data) {
-    const { recipe  } = data.data;
+    const { recipe: recipe1  } = data.data;
     return {
-        id: recipe.id,
-        title: recipe.title,
-        publisher: recipe.publisher,
-        sourceUrl: recipe.source_url,
-        image: recipe.image_url,
-        servings: recipe.servings,
-        cookingTime: recipe.cooking_time,
-        ingredients: recipe.ingredients,
-        ...recipe.key && {
-            key: recipe.key
+        id: recipe1.id,
+        title: recipe1.title,
+        publisher: recipe1.publisher,
+        sourceUrl: recipe1.source_url,
+        image: recipe1.image_url,
+        servings: recipe1.servings,
+        cookingTime: recipe1.cooking_time,
+        ingredients: recipe1.ingredients,
+        ...recipe1.key && {
+            key: recipe1.key
         }
     };
 };
@@ -2148,11 +2148,11 @@ const updateServings = function(newServings) {
 const persistBookmarks = function() {
     localStorage.setItem("bookmarks", JSON.stringify(state.bookmarks));
 };
-const addBookmark = function(recipe) {
+const addBookmark = function(recipe1) {
     //Add bookmark
-    state.bookmarks.push(recipe);
+    state.bookmarks.push(recipe1);
     // Mark current recipe as bookmark
-    if (recipe.id === state.recipe.id) state.recipe.bookmarked = true;
+    if (recipe1.id === state.recipe.id) state.recipe.bookmarked = true;
     persistBookmarks();
 };
 const deleteBookmark = function(id) {
@@ -2160,7 +2160,7 @@ const deleteBookmark = function(id) {
     const index = state.bookmarks.findIndex((el)=>el.id === id);
     state.bookmarks.splice(index, 1);
     // Mark current recipe as bookmark
-    if (id === state.recipe.id) state.recipe.bookmarked = false;
+    if (recipe.id === state.recipe.id) state.recipe.bookmarked = false;
     persistBookmarks();
 };
 const init = function() {
@@ -2185,7 +2185,7 @@ const uploadRecipe = async function(newRecipe) {
                 description
             };
         });
-        const recipe = {
+        const recipe1 = {
             title: newRecipe.title,
             source_url: newRecipe.sourceUrl,
             image_url: newRecipe.image,
@@ -2194,7 +2194,7 @@ const uploadRecipe = async function(newRecipe) {
             servings: +newRecipe.servings,
             ingredients
         };
-        const data = await (0, _helpersJs.AJAX)(`${(0, _configJs.API_URL)}?key=${(0, _configJs.KEY)}`, recipe);
+        const data = await (0, _helpersJs.AJAX)(`${(0, _configJs.API_URL)}?key=${(0, _configJs.KEY)}`, recipe1);
         state.recipe = createRecipeObject(data);
         addBookmark(state.recipe);
     } catch (err) {
@@ -2986,7 +2986,7 @@ class RecipeView extends (0, _viewJsDefault.default) {
         </div>        
         <button class="btn--round btn--bookmark">
           <svg class="">
-            <use href="${0, _iconsSvgDefault.default}#icon-bookmark${this._data.bookmarked ? "-fill" : ""}"></use>
+            <use href="${0, _iconsSvgDefault.default}#icon-bookmark ${this._data.bookmarked ? "-fill" : ""}"></use>
           </svg>
         </button>
       </div>
@@ -3034,7 +3034,7 @@ class RecipeView extends (0, _viewJsDefault.default) {
 }
 exports.default = new RecipeView();
 
-},{"./view.js":"bWlJ9","fractional":"3SU56","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","url:../../img/icons.svg":"loVOp"}],"bWlJ9":[function(require,module,exports) {
+},{"./view.js":"bWlJ9","url:../../img/icons.svg":"loVOp","fractional":"3SU56","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bWlJ9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _iconsSvg = require("url:../../img/icons.svg");
