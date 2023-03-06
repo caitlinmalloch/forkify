@@ -52,8 +52,6 @@ Start with the latest version of NPM to avoid any errors:
 
 ## Live Site
 
-[Link](https://https://forkify-caitlinmalloch.netlify.app/)
-
 https://forkify-caitlinmalloch.netlify.app/
 
 Currently hosted by Netlify
