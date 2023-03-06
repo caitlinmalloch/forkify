@@ -620,7 +620,6 @@ const controlServings = function(newServings) {
     // Update the recipe servings (in state)
     _modelJs.updateServings(newServings);
     // Update the recipe view
-    // recipeView.render(model.state.recipe);
     (0, _recipeViewJsDefault.default).update(_modelJs.state.recipe);
 };
 const controlAddBookmark = function() {
@@ -2105,7 +2104,6 @@ const loadRecipe = async function(id) {
         state.recipe = createRecipeObject(data);
         if (state.bookmarks.some((bookmark)=>bookmark.id === id)) state.recipe.bookmarked = true;
         else state.recipe.bookmarked = false;
-        console.log(state.recipe);
     } catch (err) {
         // Temp error handling
         console.error(`${err} 💥💥💥💥`);
@@ -2116,7 +2114,6 @@ const loadSearchResults = async function(query) {
     try {
         state.search.query = query;
         const data = await (0, _helpersJs.AJAX)(`${(0, _configJs.API_URL)}?search=${query}&key=${(0, _configJs.KEY)}`);
-        console.log(data);
         state.search.results = data.data.recipes.map((rec)=>{
             return {
                 id: rec.id,
@@ -2169,7 +2166,6 @@ const init = function() {
     if (storage) state.bookmarks = JSON.parse(storage);
 };
 init();
-// Clear bookmarks in development
 const clearBookmarks = function() {
     localStorage.clear("bookmarks");
 };
@@ -3462,22 +3458,18 @@ class PreviewView extends (0, _viewJsDefault.default) {
         return `
     <li class="preview">
       <a class="preview__link ${this._data.id === id ? "preview__link--active" : ""}" href="#${this._data.id}">
-
         <figure class="preview__fig">
           <img src="${this._data.image}" alt="${this._data.title}" />
         </figure>
-
         <div class="preview__data">
           <h4 class="preview__title">${this._data.title}</h4>
-          <p class="preview__publisher">${this._data.publisher}</p>
-          
+          <p class="preview__publisher">${this._data.publisher}</p>          
           <div class="preview__user-generated ${this._data.key ? "" : "hidden"}">
             <svg>
               <use href="${0, _iconsSvgDefault.default}"#icon-user"></use>
             </svg>
           </div>
-        </div>
-        
+        </div>        
       </a>
     </li>
     `;
