@@ -39,7 +39,7 @@ Start with the latest version of NPM to avoid any errors:
 1. Get a free API Key at [Forkify API_KEY](https://forkify-api.herokuapp.com/v2)
 2. Clone the repo
    ```sh
-   git clone https://github.com/catherineisonline/forkify
+   gh repo clone caitlinmalloch/forkify
    ```
 3. Install NPM packages
    ```sh
