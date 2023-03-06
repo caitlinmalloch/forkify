@@ -16,8 +16,8 @@ class RecipeView extends View {
     this._parentElement.addEventListener('click', function (e) {
       const btn = e.target.closest('.btn--update-servings');
       if (!btn) return;
-      const updateTo = +btn.dataset.updateTo;
-      if (updateTo > 0) handler(updateTo);
+      const { updateTo } = btn.dataset;
+      if (+updateTo > 0) handler(+updateTo);
     });
   }
 
@@ -52,6 +52,7 @@ class RecipeView extends View {
             minutes
           </span>
         </div>
+        
         <div class="recipe__info">
           <svg class="recipe__info-icon">
             <use href="${icons}#icon-users"></use>

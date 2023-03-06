@@ -54,14 +54,14 @@
               <div class="bookmarks">
                 <ul class="bookmarks__list">
                   <div class="message">
-                    <!-- <div>
+                    <div>
                       <svg>
                         <use href="src/img/icons.svg#icon-smile"></use>
                       </svg>
                     </div>
                     <p>
                       No bookmarks yet. Find a nice recipe and bookmark it :) 
-                    </p> -->
+                    </p>
                   </div>
 
                   <!-- <li class="preview">
@@ -272,24 +272,23 @@
         <div class="upload__column">
           <h3 class="upload__heading">Recipe data</h3>
           <label>Title</label>
-          <input value="TEST" required name="title" type="text" />
+          <input required name="title" type="text" placeholder="Recipe Name" />
           <label>URL</label>
-          <input value="TEST" required name="sourceUrl" type="text" />
+          <input required name="sourceUrl" type="text" placeholder="Source URL" />
           <label>Image URL</label>
-          <input value="TEST" required name="image" type="text" />
+          <input required name="image" type="text" placeholder="Image URL" />
           <label>Publisher</label>
-          <input value="TEST" required name="publisher" type="text" />
+          <input required name="publisher" type="text" placeholder="Recipe Publisher" />
           <label>Prep time</label>
-          <input value="23" required name="cookingTime" type="number" />
+          <input required name="cookingTime" type="number" placeholder="Number of minutes" />
           <label>Servings</label>
-          <input value="23" required name="servings" type="number" />
+          <input required name="servings" type="number" placeholder="Number of servings" />
         </div>
 
         <div class="upload__column">
           <h3 class="upload__heading">Ingredients</h3>
           <label>Ingredient 1</label>
           <input
-            value="0.5,kg,Rice"
             type="text"
             required
             name="ingredient-1"
@@ -297,14 +296,12 @@
           />
           <label>Ingredient 2</label>
           <input
-            value="1,,Avocado"
             type="text"
             name="ingredient-2"
             placeholder="Format: 'Quantity,Unit,Description'"
           />
           <label>Ingredient 3</label>
-          <input
-            value=",,salt"
+          <input        
             type="text"
             name="ingredient-3"
             placeholder="Format: 'Quantity,Unit,Description'"

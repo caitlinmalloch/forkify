@@ -1,4 +1,5 @@
 import * as model from './model.js';
+import { MODAL_CLOSE_SEC } from './config.js';
 import recipeView from './views/recipeView.js';
 import searchView from './views/searchView.js';
 import resultsView from './views/resultsView.js';
@@ -30,7 +31,7 @@ const controlRecipes = async function () {
     recipeView.render(model.state.recipe);
   } catch (err) {
     recipeView.renderError();
-    console.log(err);
+    console.error(err);
   }
 };
 
@@ -51,7 +52,7 @@ const controlSearchResults = async function () {
     // 4) Render initial pagination buttons
     paginationView.render(model.state.search);
   } catch (err) {
-    console.error(err);
+    console.log(err);
   }
 };
 
@@ -74,8 +75,7 @@ const controlServings = function (newServings) {
 const controlAddBookmark = function () {
   // 1) Add or remove bookmark
   if (!model.state.recipe.bookmarked) model.addBookmark(model.state.recipe);
-  if (model.state.recipe.bookmarked)
-    model.deleteBookmark(model.state.recipe.id);
+  else model.deleteBookmark(model.state.recipe.id);
 
   // 2) Update recipe view
   recipeView.update(model.state.recipe);
